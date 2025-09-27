@@ -5,3 +5,5 @@ datasets
 peft
 faiss-cpu
 python-dotenv
+sentence-transformers
+faiss-cpu
