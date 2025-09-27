@@ -7,4 +7,4 @@ faiss-cpu
 python-dotenv
 sentence-transformers
 faiss-cpu
-pip freeze | grep openai >> requirements.txt
+openai
