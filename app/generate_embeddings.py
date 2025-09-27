@@ -37,6 +37,6 @@ faiss.write_index(index, "app/vector_store/memory.index") # Saves the FAISS inde
 
 with open("app/vector_store/memory.pkl", "wb") as f:
     pickle.dump(texts, f) # pickle.dump() saves the original note chunks into a .pkl file because FAISS only stores the vectors and doesn't know what the vectors mean
-    # The memory.pkl file will be used to get the original text fo index 0, 3, and 5 for the top 3 vector indices (0, 3, 5 as an example)
+    # The memory.pkl file will be used to get the original text for index 0, 3, and 5 for the top 3 vector indices (0, 3, 5 as an example)
 
 print("FAISS index and memory saved")

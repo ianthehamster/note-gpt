@@ -19,7 +19,7 @@ def build_prompt(memories: list[str], user_input: str) -> str:
     USER INPUT:
     {user_input}
 
-    SOPHIA'S REPLY:
+    LUCY'S REPLY:
     """
 
 def get_llm_response(memories: list[str], user_input: str) -> str:
