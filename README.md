@@ -19,21 +19,29 @@ Lucy remembers your notes, retrieves the most relevant memories, and responds in
 
 ```
 ├── app/
+│   ├── __pycache__/          # Cached Python bytecode
 │   ├── vector_store/         # Stores FAISS index + memory.pkl
-│   ├── llm_engine.py         # LLM prompt builder + GPT-4 client
-│   ├── memory_search.py      # Memory search with FAISS
+│   │   ├── memory.index
+│   │   └── memory.pkl
+│   ├── generate_embeddings.py # Creates FAISS index + saves vectors
+│   ├── llm_engine.py          # LLM prompt builder + GPT-4 client
+│   ├── main.py                # FastAPI entrypoint
+│   ├── memory_search.py       # Memory search with FAISS
+│   └── preprocess_notes.py    # Prepares dataset from notes
 │
 ├── data/
-│   └── tokenized_notes/      # Saved HuggingFace dataset
+│   ├── tokenized_notes/       # Saved HuggingFace dataset
+│   └── lucy_notes.jsonl       # Generated training dataset (LoRA/finetuning)
 │
 ├── store/
-│   └── notes/                # Your raw .txt notes
+│   └── notes/                 # Your raw .txt notes
 │
-├── preprocess_notes.py       # Prepares dataset from notes
-├── generate_embeddings.py    # Creates FAISS index + saves vectors
-├── main.py                   # FastAPI entrypoint
-├── requirements.txt          # Python dependencies
-└── README.md                 # Project documentation
+├── .env                       # API keys and secrets
+├── .gitignore                 # Git ignore rules
+├── generate_dataset_for_lucy.py # Script to create JSONL samples
+├── LICENSE                    # Project license
+├── README.md                  # Project documentation
+└── requirements.txt           # Python dependencies
 ```
 
 ---
